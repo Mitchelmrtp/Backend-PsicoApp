@@ -56,16 +56,16 @@ Content-Type: application/json
 
 
 ################
-PUT http://localhost:3001/usuarios/
+PUT http://localhost:3001/usuarios/create
 Content-Type: application/json
 
 {
     "id": 9,
     "nombreCompleto": "Juan Pérez Actualizado",
-    "correo": "juan.perezz@example.com",
-    "DNI": "12345672",
+    "correo": "juanzz.perezz@example.com",
+    "DNI": "123456722",
     "tipoUsuario": "estudiante",
-    "numeroCelular": "987654321",
+    "numeroCelular": "9876543211",
     "contrasena": "nuevaContrasena"
 }
 

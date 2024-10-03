@@ -12,12 +12,14 @@ const findAll = async (req, res) => {
 const findOne = async (req, res) => {
     const { id } = req.params;
     try {
-        const doctor = await DoctorService.findOne(id);
-        return doctor ? res.status(200).json(doctor) : res.status(404).json({ message: 'Doctor no encontrado' });
+      const doctor = await DoctorService.findOne(id);
+      return doctor
+        ? res.status(200).json(doctor)
+        : res.status(404).json({ message: 'Doctor no encontrado' });
     } catch (error) {
-        return res.status(500).json({ message: 'Error al obtener el doctor', error });
+      return res.status(500).json({ message: 'Error al obtener el doctor', error });
     }
-};
+  };
 
 const create = async (req, res) => {
     try {
