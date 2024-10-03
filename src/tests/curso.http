@@ -1,14 +1,13 @@
 GET http://localhost:3001/cursos
 ########
 
-POST http://localhost:3001/cursos/
+POST http://ocalhost:3001/usuario/validate
 Content-Type: application/json
 
 {
-    "nombre": "Progra Web",
-    "nivel": 5,
-    "carrera": "Sistemas",
-    "idDocente": 1
+    "correo": "juan.perez@example.com",
+    "password": "contrasena123",
+  
   }
 ###
 
@@ -42,3 +41,31 @@ Content-Type: application/json
     "carrera": "Sistemas",
     "idDocente": 2
   }
+
+############
+GET http://localhost:3001/usuarios
+
+#############
+POST http://localhost:3001/usuarios/validate
+Content-Type: application/json
+
+{
+    "correo": "juan.perez@example.com",
+    "contrasena": "contrasena123"
+}
+
+
+################
+PUT http://localhost:3001/usuarios/
+Content-Type: application/json
+
+{
+    "id": 9,
+    "nombreCompleto": "Juan Pérez Actualizado",
+    "correo": "juan.perezz@example.com",
+    "DNI": "12345672",
+    "tipoUsuario": "estudiante",
+    "numeroCelular": "987654321",
+    "contrasena": "nuevaContrasena"
+}
+
