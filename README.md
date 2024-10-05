@@ -1,24 +1,30 @@
-# Sistema de Gestión de Pacientes Backend
+# Sistema de Gestión de Pacientes - Backend en Node.js
 
-Este es el backend de un sistema de gestión de pacientes implementado en Node.js. El proyecto permite a especialistas y psicólogos gestionar sesiones, cuestionarios, diagnósticos y más.
+Este proyecto es un sistema de gestión de pacientes diseñado para clínicas y profesionales de la salud mental, que permite la administración eficiente de cuestionarios, sesiones, diagnósticos, y reportes médicos. Desarrollado utilizando **Node.js**, **Express**, y **Sequelize**, este backend proporciona una robusta API que puede ser fácilmente integrada con aplicaciones frontend o móviles.
 
-## **Características Principales**
+## Características Principales
 
-- **Gestión de Usuarios:** Creación, autenticación y roles de usuario.
-- **Gestión de Pacientes:** Registro de pacientes, historial médico, y citas.
-- **Gestión de Sesiones:** Manejo de sesiones con especialistas, diagnósticos y horarios.
-- **Reportes y Diagnósticos:** Generación de reportes sobre las sesiones y revisiones diagnósticas.
+- **Gestión de Pacientes**: Registro y seguimiento de pacientes con sus historiales clínicos.
+- **Gestión de Especialistas**: Manejo de datos de psicólogos, horarios y especialidades.
+- **Sesiones y Diagnósticos**: Registro de sesiones con especialistas y diagnósticos detallados.
+- **Cuestionarios y Reportes**: Creación de cuestionarios y generación de reportes automáticos de cada sesión.
+- **Sistema de Citas**: Solicitud y administración de citas para los pacientes.
+- **Autenticación y Roles de Usuario**: Sistema de autenticación para diferenciar entre los roles de usuarios (pacientes, especialistas, administradores).
 
-## **Requisitos**
+## Requisitos
 
-- Node.js >= 14.x
-- Express.js
-- Sequelize (u otro ORM para la conexión a la base de datos)
-- Base de datos (MySQL, PostgreSQL, etc.)
+- **Node.js** >= 14.x
+- **Express.js** (Framework web para Node.js)
+- **Sequelize** (ORM para manejar las conexiones con la base de datos)
+- **MySQL** / **PostgreSQL** / **Otro** (Sistema de gestión de bases de datos relacional)
 
-## **Instalación**
+## Instalación y Configuración
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/usuario/proyecto-backend.git
-   cd proyecto-backend
+### 1. Clonar el Repositorio
+
+```bash
+git clone https://github.com/usuario/proyecto-backend.git
+cd proyecto-backend
+
+npm install
+npm run dev
