@@ -17,7 +17,6 @@ const create = async (data) => {
   }
 };
 
-
 const update = async (id, data) => {
   const usuario = await Usuario.findByPk(id);
   if (!usuario) {
@@ -36,8 +35,7 @@ const remove = async (id) => {
 };
 
 const validate = async (correo, contrasena) => {
-  return await Usuario.findOne({ where: { correo, contrasena } });  // Busca el usuario por correo y contraseña
+  return await Usuario.findOne({ where: { correo, contrasena } });
 };
-
 
 export default { findAll, findOne, create, update, remove, validate };

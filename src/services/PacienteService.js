@@ -20,7 +20,7 @@ const create = async (paciente) => {
 
 const findOne = async (id) => {
     try {
-        return await Paciente.findOne({ where: { id } });
+        return await Paciente.findOne({ where: { idPaciente: id } });
     } catch (err) {
         console.error(err);
         return null;
@@ -29,7 +29,7 @@ const findOne = async (id) => {
 
 const update = async (paciente) => {
     try {
-        const foundPaciente = await Paciente.findByPk(paciente.id);
+        const foundPaciente = await Paciente.findByPk(paciente.idPaciente);
         if (!foundPaciente) return null;
 
         await foundPaciente.update(paciente);
@@ -42,7 +42,7 @@ const update = async (paciente) => {
 
 const remove = async (id) => {
     try {
-        const result = await Paciente.destroy({ where: { id } });
+        const result = await Paciente.destroy({ where: { idPaciente: id } });
         return result === 1;
     } catch (err) {
         console.error(err);

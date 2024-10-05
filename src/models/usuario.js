@@ -2,12 +2,16 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
 const Usuario = sequelize.define('Usuario', {
-  id: {
+  id_usuario: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  nombreCompleto: {
+  nombre: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  apellido: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -16,26 +20,23 @@ const Usuario = sequelize.define('Usuario', {
     allowNull: false,
     unique: true,
   },
-  DNI: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  tipoUsuario: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  numeroCelular: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   contrasena: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Admin: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false,
+  fecha_nacimiento: {
+    type: DataTypes.DATE,
+    allowNull: true,
   },
+  DNI: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    unique: true,
+  },
+  NumCelular: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  }
 }, {
   timestamps: false,
 });

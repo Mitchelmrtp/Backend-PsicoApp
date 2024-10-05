@@ -51,9 +51,9 @@ const validate = async (req, res) => {
   try {
     const usuario = await UsuarioService.validate(correo, contrasena);
     if (usuario) {
-      return res.status(200).json(usuario);  // Retorna el usuario si es válido
+      return res.status(200).json(usuario);  
     } else {
-      return res.status(404).json({ message: 'Usuario o contraseña incorrectos' });  // Retorna error si no se encuentra el usuario
+      return res.status(404).json({ message: 'Usuario o contraseña incorrectos' });
     }
   } catch (error) {
     return res.status(500).json({ message: 'Error en la validación del usuario', error });

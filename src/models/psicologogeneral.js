@@ -1,21 +1,13 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
-const Doctor = sequelize.define('Doctor', {
-    id: {
+const PsicologoGeneral = sequelize.define('PsicologoGeneral', {
+    id_psicologogeneral: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nombre: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    especialidadId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    horarioId: {
+    Usuario_id_usuario: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
@@ -23,4 +15,4 @@ const Doctor = sequelize.define('Doctor', {
     timestamps: false
 });
 
-export default Doctor;
+export default PsicologoGeneral;

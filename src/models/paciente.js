@@ -2,27 +2,21 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
 const Paciente = sequelize.define('Paciente', {
-  id: {
+  idPaciente: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  nombre: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  historialMedico: {
+  historial: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  edad: {
+  Usuario_id_usuario: {
     type: DataTypes.INTEGER,
     allowNull: false,
-  },
-  direccion: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
+  }
+}, {
+  timestamps: false
 });
 
 export default Paciente;

@@ -34,6 +34,4 @@ const sendResponse = (result, res) => {
         return res.status(500).json({ message: 'Ha ocurrido un error' });
 };
 
-const PacienteController = { findAll, findOne, create, update, remove };
-
-export default PacienteController;
+export default { findAll, findOne, create, update, remove };
