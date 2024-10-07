@@ -50,8 +50,16 @@ POST http://localhost:3001/usuarios/validate
 Content-Type: application/json
 
 {
-    "correo": "juan.perez@example.com",
-    "contrasena": "contrasena123"
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "correo": "juan@validamente.cpi.com",
+  "DNI": "12345678",
+  "NumCelular": "987654321",
+  "contrasena": "password123",
+  "fecha_nacimiento": "1990-01-01"
+}
+
 }
 
 
@@ -60,12 +68,15 @@ PUT http://localhost:3001/usuarios/create
 Content-Type: application/json
 
 {
-    "id": 9,
-    "nombreCompleto": "Juan Pérez Actualizado",
-    "correo": "juanzz.perezz@example.com",
-    "DNI": "123456722",
-    "tipoUsuario": "estudiante",
-    "numeroCelular": "9876543211",
-    "contrasena": "nuevaContrasena"
+    
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "correo": "juan@validamente.cpi.com",
+  "DNI": "12345678",
+  "NumCelular": "987654321",
+  "contrasena": "password123",
+  "fecha_nacimiento": "1990-01-01"
+
+
 }
 

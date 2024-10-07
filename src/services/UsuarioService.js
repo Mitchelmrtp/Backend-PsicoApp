@@ -1,4 +1,4 @@
-import Usuario from '../models/usuario.js';
+import { Usuario, Paciente, PsicologoGeneral } from '../models/index.js';
 
 const findAll = async () => {
   return await Usuario.findAll();
@@ -10,10 +10,22 @@ const findOne = async (id) => {
 
 const create = async (data) => {
   try {
-      return await Usuario.create(data);
+    const newUsuario = await Usuario.create(data);
+
+    // Si el rol es "Paciente", creamos un registro en Paciente
+    if (data.rol === 'Paciente') {
+      await Paciente.create({ Usuario_id_usuario: newUsuario.id_usuario });
+    }
+
+    // Si el rol es "Psicologo", creamos un registro en PsicologoGeneral
+    if (data.rol === 'Psicologo') {
+      await PsicologoGeneral.create({ Usuario_id_usuario: newUsuario.id_usuario });
+    }
+
+    return newUsuario;
   } catch (err) {
-      console.error(err);
-      return null;
+    console.error(err);
+    return null;
   }
 };
 
@@ -35,7 +47,18 @@ const remove = async (id) => {
 };
 
 const validate = async (correo, contrasena) => {
-  return await Usuario.findOne({ where: { correo, contrasena } });
+  try {
+    const usuario = await Usuario.findOne({ where: { correo, contrasena } });
+
+    if (usuario) {
+      return usuario;  // Devolveremos el objeto usuario con el rol
+    } else {
+      return null;
+    }
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
 };
 
 export default { findAll, findOne, create, update, remove, validate };

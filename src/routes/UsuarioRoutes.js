@@ -1,5 +1,5 @@
 import express from 'express';
-import UsuarioController from '../controllers/usuarioController.js';
+import UsuarioController from '../controllers/usuarioController.js';  // Asegúrate de que la ruta es correcta
 
 const router = express.Router();
 
@@ -8,6 +8,6 @@ router.get('/:id', UsuarioController.findOne);
 router.post('/', UsuarioController.create);
 router.put('/:id', UsuarioController.update);
 router.delete('/:id', UsuarioController.remove);
-router.post('/validate', UsuarioController.validate);
+router.post('/validate', UsuarioController.validate);  // Para la validación de login
 
 export default router;
