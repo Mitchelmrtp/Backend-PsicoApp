@@ -1,5 +1,5 @@
 import express from 'express';
-import PsicologoGeneralController from '../controllers/psicologogeneralController.js';
+import PsicologoGeneralController from '../controllers/psicologoGeneralController.js';
 
 const router = express.Router();
 
