@@ -16,7 +16,7 @@ const Reporte = sequelize.define('Reporte', {
         },
     },
     descripcion: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: true,
     },
     fecha: {

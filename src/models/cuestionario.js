@@ -9,7 +9,7 @@ const Cuestionario = sequelize.define('Cuestionario', {
     autoIncrement: true
   },
   descripcion: {
-    type: DataTypes.STRING(30),
+    type: DataTypes.STRING,
     allowNull: false
   },
   fecha: {

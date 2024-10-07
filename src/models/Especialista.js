@@ -9,7 +9,7 @@ const Especialista = sequelize.define('Especialista', {
         autoIncrement: true,
     },
     especialidad: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     PsicologoGeneral_id_psicologogeneral: {

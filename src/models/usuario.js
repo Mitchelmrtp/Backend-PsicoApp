@@ -8,20 +8,20 @@ const Usuario = sequelize.define('Usuario', {
     autoIncrement: true,
   },
   nombre: {
-    type: DataTypes.STRING(15),
+    type: DataTypes.STRING,
     allowNull: false,
   },
   apellido: {
-    type: DataTypes.STRING(15),
+    type: DataTypes.STRING,
     allowNull: false,
   },
   correo: {
-    type: DataTypes.STRING(15),
+    type: DataTypes.STRING,
     allowNull: false,
     unique: true,
   },
   contrasena: {
-    type: DataTypes.STRING(12),
+    type: DataTypes.STRING,
     allowNull: false,
   },
   fecha_nacimiento: {
@@ -29,12 +29,12 @@ const Usuario = sequelize.define('Usuario', {
     allowNull: true,
   },
   DNI: {
-    type: DataTypes.STRING(8),
+    type: DataTypes.STRING,
     allowNull: true,
     unique: true,
   },
   NumCelular: {
-    type: DataTypes.STRING(11),
+    type: DataTypes.STRING,
     allowNull: true,
   }
 }, {

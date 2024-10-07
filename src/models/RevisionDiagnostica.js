@@ -9,11 +9,11 @@ const RevisionDiagnostica = sequelize.define('RevisionDiagnostica', {
         autoIncrement: true,
     },
     Diagnostico: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: true,
     },
     pruebaDiagnostica: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: true,
     },
     SolicitarCita_idSolicitarCita: {

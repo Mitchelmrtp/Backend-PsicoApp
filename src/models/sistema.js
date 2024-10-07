@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 import Paciente from './paciente.js';
 import Especialista from './especialista.js';
-import RevisionDiagnostica from './revisionDiagnostica.js';
+import RevisionDiagnostica from './RevisionDiagnostica.js';
 
 const Sesion = sequelize.define('Sesion', {
     id_sesion: {

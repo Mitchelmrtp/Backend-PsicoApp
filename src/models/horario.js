@@ -9,7 +9,7 @@ const Horario = sequelize.define('Horario', {
         autoIncrement: true,
     },
     evento: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.STRING,
         allowNull: true,
     },
     fecha: {
