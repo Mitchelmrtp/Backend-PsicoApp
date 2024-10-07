@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A6EFCA80-071E-2E0F-7E2D-CA1689D1DB96" name="Usuario">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>77593BB0-A6B8-31C8-D836-28483DAEA4F6</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id usuario" id="2CD3302B-7ED0-669E-C74D-B47898DA9520">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>5E082A6E-B005-7820-4900-4D532F409945</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="04879EF0-F0FA-E2E7-E81D-DF0077D42C4C">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>F2411762-98E9-C7DA-6FA0-80CCFA8C5BAC</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellido" id="1434261F-E2DC-4FEF-6091-65B76780F752">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>2D875B07-E7DF-7B34-DB97-2242720E76D1</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="88C19F72-A735-4753-AF4E-510D1C9E4AF1">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>D5ABC06D-0D44-D9D7-2C9B-AA9604ADCED1</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contrasena" id="E996D980-618F-6625-2EA2-73D862B98BCE">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>5BD920AB-D621-8CD5-6E4E-F3F53F25F341</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha nacimiento" id="7EC185C9-2B33-78B2-2457-AB5106E222B0">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>A39A9DC5-3360-2C53-1F38-DFF70FADB282</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DNI" id="3AED14D5-E7EA-4124-561A-1CA1EF448921">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>B3ECF33B-FDF0-D7A0-4ED2-8F730BD9AA04</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NumCelular" id="6A9B4D94-E76C-D916-1DCA-78BF1FD9F777">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>ECB02637-786D-F979-63B5-C977C88B9FE5</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AB02C85C-BB62-B2D1-5B22-268161B75072" name="Usuario PK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>4BAF7F4E-6369-0AEE-E888-477CE416962E</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2CD3302B-7ED0-669E-C74D-B47898DA9520</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="DBF7A1B6-9352-5EB1-850F-9B809D864F28" name="Usuario  UN">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>DB1BACB2-E28C-EC2B-E697-356F0298BECF</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+</identifier>
+<identifier id="9E14090C-3D43-217D-89B1-AD7CFC57428B" name="Usuario correo UN">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>A1977D67-F4E5-7058-C4A2-4FC91A8A49E2</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>88C19F72-A735-4753-AF4E-510D1C9E4AF1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

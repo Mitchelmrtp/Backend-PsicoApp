@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D38C5D24-1752-FA86-EA09-B52649F13438" name="PsicologoGeneral">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>419F6BE6-FC84-DBD7-2053-CBBD4E97D1A5</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id psicologogeneral" id="0863A6E1-B614-2A9D-F5F5-A020AFC08D39">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>3138E079-177F-F091-36F5-AF041B460092</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Usuario id usuario" id="52C21648-5CAA-6D83-9FF0-6A766F7DA2F9">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>4A8B77B5-A2AE-68ED-FEF4-C317E31BFC0D</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>2CD3302B-7ED0-669E-C74D-B47898DA9520</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CDD8508E-C019-ABB4-D37A-4E9E36E70D00" name="PsicologoGeneral PK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>E7726B21-05FB-DFE7-CD27-9D438B85417B</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0863A6E1-B614-2A9D-F5F5-A020AFC08D39</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="Paciente" directorySegmentName="seg_0" id="337DE908-EEAC-F0CA-A9E1-5810FE4FF75F">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<database>DB_NULLELEMENT</database>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="historial" id="4E906624-A9D2-B74C-CCB4-53CB59EDD3E8">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="idPaciente" id="8EBC53C3-6F62-3E58-60BF-A857AC43536E">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Usuario_id_usuario" id="9FE36FD2-7F2E-82F0-3CB1-DC8932BAD770">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="Paciente_Usuario_FK" id="9EC81A43-4CAF-9659-82E6-3C8001C320FE">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="Paciente_PK" id="9DDDA193-58AA-E308-D13A-C4743BCCCCC5">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.UniqueProxySqlServerv2k5" name="Paciente_idPaciente_UN" id="0CE80B30-9CA3-58B5-2B85-3C316767D264">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</UniqueKey>
+</uniqueKeys>
+</TableProxySqlServerv2k5>

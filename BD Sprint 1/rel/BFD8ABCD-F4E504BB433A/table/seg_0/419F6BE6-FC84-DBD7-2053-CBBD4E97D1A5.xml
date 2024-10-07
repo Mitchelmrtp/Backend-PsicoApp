@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="419F6BE6-FC84-DBD7-2053-CBBD4E97D1A5" name="PsicologoGeneral">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>27DAA7C6-48D8-E40E-24E4-A830D65654E1</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_psicologogeneral" id="3138E079-177F-F091-36F5-AF041B460092">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>A76B6DE0-13E9-42CA-D21C-5EF5E8385F7E</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Usuario_id_usuario" id="DA6FCFA8-2E2C-3C6B-26B0-9B3E7A90A665">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>8DDE8153-F90D-F1DB-9E09-5C556C914BC0</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D50013E-47AA-1E6A-FA9C-0588A247D1CA" referredColumn="5E082A6E-B005-7820-4900-4D532F409945"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E7726B21-05FB-DFE7-CD27-9D438B85417B" name="PsicologoGeneral_PK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>63FE84A3-68B2-95BE-BF80-0B84D9965D85</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3138E079-177F-F091-36F5-AF041B460092"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5CE7110B-060E-44E0-D06D-51D1589911DE" name="PsicologoGeneral_Usuario_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>1E57094D-0BF3-A775-944F-EDD49DD606B9</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA6FCFA8-2E2C-3C6B-26B0-9B3E7A90A665"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

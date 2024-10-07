@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TipoUsuario_Usuario_FK" directorySegmentName="seg_0" id="AE458494-ABD6-3E6C-54E1-4B13D6435707">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>9D92CF33-1C7C-9EB6-B9D9-683CCB924CCB</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<sourcePk>AB02C85C-BB62-B2D1-5B22-268161B75072</sourcePk>
+<dominantRole>A6EFCA80-071E-2E0F-7E2D-CA1689D1DB96</dominantRole>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A6EFCA80-071E-2E0F-7E2D-CA1689D1DB96</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>B1F366F3-25AF-05BD-DB60-FF4A232C3CF6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

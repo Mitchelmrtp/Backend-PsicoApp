@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="RevisionDiagnostica_SolicitarCita_FK" directorySegmentName="seg_0" id="5AD1AEBF-148A-72A1-AB53-BE68A21AEBA9">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>0C726AFC-D79F-95D2-6186-0F5A790CE5DF</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<sourcePk>2B7DACBC-E46C-0C93-29FE-E9D49D98805C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>90B1BCEC-5EAC-87CE-BCCC-EFF447904EB5</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6A62D223-2B69-EF52-B0B5-834BB132210A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

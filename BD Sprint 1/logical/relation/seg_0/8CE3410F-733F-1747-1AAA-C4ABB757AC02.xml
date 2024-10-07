@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Horario_PsicologoGeneral_FK" directorySegmentName="seg_0" id="8CE3410F-733F-1747-1AAA-C4ABB757AC02">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>40BABE5F-D8A3-7BBB-2003-2E617B53B267</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<sourcePk>CDD8508E-C019-ABB4-D37A-4E9E36E70D00</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D38C5D24-1752-FA86-EA09-B52649F13438</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4318DE9D-6BEF-1D5B-60A8-2B90DE0B909E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

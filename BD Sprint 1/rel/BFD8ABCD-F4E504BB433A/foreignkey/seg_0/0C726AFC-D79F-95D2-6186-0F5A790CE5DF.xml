@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0C726AFC-D79F-95D2-6186-0F5A790CE5DF" containerWithKeyObject="FF0FE9A9-6452-948A-3937-CF16288F5D18" localFKIndex="8EF1F8E5-2317-A789-802C-BA35C95DAE94" name="RevisionDiagnostica_SolicitarCita_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>E9ABE370-3E20-6AD5-3A32-6212F5D699A3</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<referredTableLongName>SolicitarCita</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5E5F8AEC-1E7B-E53A-7AED-096BF52D7058</referredTableID>
+<keyObject>C74944DB-3AE0-C30C-7505-F9F0E650B88B</keyObject>
+<referredKeyID>C74944DB-3AE0-C30C-7505-F9F0E650B88B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>idSolicitarCita</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

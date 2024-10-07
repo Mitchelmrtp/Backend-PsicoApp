@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="337DE908-EEAC-F0CA-A9E1-5810FE4FF75F" name="Paciente">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>74CF1F09-8053-4953-DC1C-96B129ABE490</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idPaciente" id="8EBC53C3-6F62-3E58-60BF-A857AC43536E">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>D525410B-3502-4E3B-25A2-9DF67FBDD453</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="historial" id="4E906624-A9D2-B74C-CCB4-53CB59EDD3E8">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>CB05DF3B-F2B7-2CA3-940C-112ABD85CEF2</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Usuario_id_usuario" id="9FE36FD2-7F2E-82F0-3CB1-DC8932BAD770">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>38DB5A89-CA5C-385E-F377-16638E12268B</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="77E25941-F677-0844-12D9-FEBF35682C01" referredColumn="5E082A6E-B005-7820-4900-4D532F409945"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9DDDA193-58AA-E308-D13A-C4743BCCCCC5" name="Paciente_PK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>1291003C-9F9A-A7C4-BA36-BCEA02F5ADB0</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EBC53C3-6F62-3E58-60BF-A857AC43536E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0CE80B30-9CA3-58B5-2B85-3C316767D264" name="Paciente_idPaciente_UN">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>70DDC314-523C-40F2-52B0-5A44091D8482</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EBC53C3-6F62-3E58-60BF-A857AC43536E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9EC81A43-4CAF-9659-82E6-3C8001C320FE" name="Paciente_Usuario_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>FF4BECC9-11D6-EEC0-800D-DD84E14A64DD</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FE36FD2-7F2E-82F0-3CB1-DC8932BAD770"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

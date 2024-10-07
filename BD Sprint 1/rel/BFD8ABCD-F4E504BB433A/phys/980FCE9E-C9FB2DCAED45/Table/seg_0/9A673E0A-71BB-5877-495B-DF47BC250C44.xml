@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="TipoUsuario" directorySegmentName="seg_0" id="9A673E0A-71BB-5877-495B-DF47BC250C44">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<database>DB_NULLELEMENT</database>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Usuario_id_usuario" id="10A9D83C-6297-D87F-BBFF-455D6D135FB6">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="idTipoUsuario" id="23DDA488-2B53-22BB-EB00-CE913A3DD821">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="rol" id="B0B0639C-5739-CC7F-A465-933AAB483D32">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.IndexProxySqlServerv2k12" name="TipoUsuario__IDX" id="95AF7362-FA11-5738-EF36-BB27A72C0045">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<recomputeStatistics>ON</recomputeStatistics>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="TipoUsuario_Usuario_FK" id="9E8144EF-512A-DE3D-1DD4-CD2B2EFF0F06">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="TipoUsuario_PK" id="6021995F-86E4-1B0D-2367-262BAB766278">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+</TableProxySqlServerv2k5>

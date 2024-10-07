@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="Horario" directorySegmentName="seg_0" id="E2717B1B-59C1-D936-7F36-B3F278404E62">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<database>DB_NULLELEMENT</database>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="fecha" id="5B0AF7F6-375A-D795-03D6-DAF8A194F0A9">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="PsicologoGeneral_id_psicologogeneral" id="5F9B2CF5-763B-F9CD-D6EF-AB62936C2211">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="id_horario" id="79D74AFC-4906-3447-5868-E5AA01179F73">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="evento" id="BA6FB6D8-F56D-6DA1-0241-4478A60858B7">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="hora" id="D8C33BF5-BC0B-0705-CFE5-5DC34597BDF0">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="Horario_PsicologoGeneral_FK" id="DCCAC4DA-4304-E1CE-52DD-02F726F7D788">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="Horario_PK" id="5B502C45-827B-BDD3-5E5C-82005E3618A6">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-07 05:38:17 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+</TableProxySqlServerv2k5>

@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DomainFile class="oracle.dbtools.crest.model.design.DomainFileWrapper" fileName="list_Domains">
+<domains>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="Time_0_0_0" id="1636972D-2332-3F8B-5F77-0C2E1DCFF02F">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-09-15 06:32:47 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>list_Domains</fileName>
+<logicalDatatype>LOGDT014</logicalDatatype>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TEXT_0_0_0" id="1F6F5C93-63BE-5DDB-08FD-195C56AE8F37">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-09-15 06:32:47 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>list_Domains</fileName>
+<logicalDatatype>LOGDT040</logicalDatatype>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="BIGINT_0_0_0" id="59D01B11-E728-FDB5-0E2D-02D2BE9EB355">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-09-15 06:32:47 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>list_Domains</fileName>
+<logicalDatatype>LOGDT027</logicalDatatype>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="Date_0_0_0" id="F9F711EF-DAF9-B5D4-CB91-D3E7E22C1DEE">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-09-15 06:32:47 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>list_Domains</fileName>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Domain>
+</domains>
+</DomainFile>

@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FF0FE9A9-6452-948A-3937-CF16288F5D18" name="RevisionDiagnostica">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>C49B4CF4-72DF-B032-8120-438E2A267A1B</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idDiagnostico" id="3501346E-7244-E3E6-CEC0-2FD38634C2D7">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>52BF4AEE-20CC-542A-139A-7C8B3B89F445</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Diagnostico" id="5C861DED-F4C8-70C9-D33A-B40292451246">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>5D0BD6FF-629E-DBFC-4CAE-9CEAA7DC015A</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pruebaDianostica" id="F46E211A-5969-5717-9E60-7A097AA28D40">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>571754D5-6B74-A6C9-86D2-F3DFA2E96289</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SolicitarCita_idSolicitarCita" id="F77E949E-F201-565E-8330-6C4484C798DB">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>BA86E2D8-2300-DD72-116D-4811DBC07370</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0C726AFC-D79F-95D2-6186-0F5A790CE5DF" referredColumn="529F2AB1-6F76-4483-2ECA-3665DF33AAE6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="038B9737-DCC3-23EE-C52B-4DABCF794E9D" name="RevisionDiagnostica_PK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>8CC3A548-1C9F-81A7-8A56-28AE0EF23B1B</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3501346E-7244-E3E6-CEC0-2FD38634C2D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8EF1F8E5-2317-A789-802C-BA35C95DAE94" name="RevisionDiagnostica_SolicitarCita_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>E9ABE370-3E20-6AD5-3A32-6212F5D699A3</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F77E949E-F201-565E-8330-6C4484C798DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

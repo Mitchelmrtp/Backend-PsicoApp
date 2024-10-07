@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Sesion_Especialista_FK" directorySegmentName="seg_0" id="2A2B0188-A5AB-BED1-52CC-D0D1C7D0014D">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>A4527FAB-06B3-9551-5A50-65D3CF959796</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<sourcePk>2B05D46C-2299-983F-6D57-C0FEB87D163E</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>33C258D2-2B9D-CA1B-AD9C-0442C70784D1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8EBA4AFA-C92E-E371-35EA-2A642B356FF0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

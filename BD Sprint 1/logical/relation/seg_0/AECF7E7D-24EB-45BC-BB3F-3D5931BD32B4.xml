@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Historial_Paciente_FK" directorySegmentName="seg_0" id="AECF7E7D-24EB-45BC-BB3F-3D5931BD32B4">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 08:00:41 UTC</createdTime>
+<generatorID>D0E81063-0291-58FD-47F7-6EB18DEA2483</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<engineerTo>
+<item key="BFD8ABCD-17EC-9F0B-08F3-F4E504BB433A" value="true"/>
+</engineerTo>
+<sourcePk>E4C44658-5C33-3927-636E-49FD5D424DCF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1F5DA04E-1246-09F6-FBD7-F5C724005C19</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E5F72D72-6F4E-4690-2091-0529D3C5C5E2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

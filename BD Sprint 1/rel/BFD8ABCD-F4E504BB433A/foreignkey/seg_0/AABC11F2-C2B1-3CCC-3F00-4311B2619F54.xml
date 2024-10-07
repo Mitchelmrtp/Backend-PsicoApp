@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AABC11F2-C2B1-3CCC-3F00-4311B2619F54" containerWithKeyObject="9CD414BE-D8B8-9A26-6F24-4D37E428AC79" localFKIndex="18C56E97-027A-EF79-1994-A86BFD7DC153" name="Reporte_Sesion_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>9C919180-B2AC-6DEC-8631-BB2B4875EA49</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<referredTableLongName>Sesion</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9D3DBC7C-E7C2-D12E-D687-0AC27EA4EDBC</referredTableID>
+<keyObject>56F12348-836D-CDC9-AB9F-F23EE88F3CEA</keyObject>
+<referredKeyID>56F12348-836D-CDC9-AB9F-F23EE88F3CEA</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id_sesion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

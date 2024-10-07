@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9D3DBC7C-E7C2-D12E-D687-0AC27EA4EDBC" name="Sesion">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>CA57251D-C7AD-C13E-3BEA-8CA7A60FBFEF</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_sesion" id="D5078F53-33DA-0E39-F89C-889FF9D5C4E2">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>EBC8C411-30C5-1FEC-9C13-D9E7DB1AC5B8</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Especialista_id_especialista" id="ED0B67B4-A96A-44E8-4952-C28F527DF2CC">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>F42C57CF-7005-CCD1-1BC0-7AE1B24F19D4</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A4527FAB-06B3-9551-5A50-65D3CF959796" referredColumn="585C52E2-91E2-9E45-EEEA-6DD76EC2D352"/>
+</associations>
+</Column>
+<Column name="fecha" id="5F1BD0B0-44EC-713B-12A4-6288AED9D83B">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>353B32E5-AC7C-4FA6-3E77-2567457BE7C7</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hora" id="744672A3-FEA6-C7EE-360A-33BCEC386E87">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:54:43 UTC</createdTime>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Paciente_idPaciente" id="252F6D88-7B47-79AC-87D7-3EBE0F5BC6F0">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>64ED529C-9668-4B2A-D50B-7DAAE0EC2961</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="20160364-E137-AF88-E497-14FF596B68AE" referredColumn="8EBC53C3-6F62-3E58-60BF-A857AC43536E"/>
+</associations>
+</Column>
+<Column name="RevisiónDiagnostica_idDiagnostico" id="EE8060DC-39D2-C259-164A-0151635C5CBC">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>9B4E5C66-81BD-EF34-C1FE-3B501319E2FD</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8BBFA98A-5608-1586-7BB0-38FC32576047" referredColumn="3501346E-7244-E3E6-CEC0-2FD38634C2D7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="56F12348-836D-CDC9-AB9F-F23EE88F3CEA" name="Sesion_PK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>DBB1B9A2-D24E-416B-62E3-705FF9BB4D76</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5078F53-33DA-0E39-F89C-889FF9D5C4E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C619C5D-43DA-D6BE-0C4E-28553BB9DF0F" name="Sesion_Especialista_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>CE717334-A2C8-A084-4B2B-AA2862485B4C</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED0B67B4-A96A-44E8-4952-C28F527DF2CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E58B831E-B19B-8F9B-72C8-9C84F9501C5E" name="Sesion_Paciente_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>76DA525D-C2F4-E57C-C4E8-AC45FF047403</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="252F6D88-7B47-79AC-87D7-3EBE0F5BC6F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="844DBCBD-48B4-64FF-6233-9E416A065A63" name="Sesion_RevisiónDiagnostica_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>6295A1D6-5D9A-39A7-0A77-5794C437B219</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE8060DC-39D2-C259-164A-0151635C5CBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

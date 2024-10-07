@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="40BABE5F-D8A3-7BBB-2003-2E617B53B267" containerWithKeyObject="E2717B1B-59C1-D936-7F36-B3F278404E62" localFKIndex="DCCAC4DA-4304-E1CE-52DD-02F726F7D788" name="Horario_PsicologoGeneral_FK">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-10-05 07:52:04 UTC</createdTime>
+<generatorID>5DAE2B50-76DE-D33E-F02E-04B0CE7E4BED</generatorID>
+<ownerDesignName>BD Sprint 1</ownerDesignName>
+<referredTableLongName>PsicologoGeneral</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>419F6BE6-FC84-DBD7-2053-CBBD4E97D1A5</referredTableID>
+<keyObject>E7726B21-05FB-DFE7-CD27-9D438B85417B</keyObject>
+<referredKeyID>E7726B21-05FB-DFE7-CD27-9D438B85417B</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id_psicologogeneral</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BD Sprint 1" id="8730B074-7650-BF30-40F3-AE2F1552D706" version="3.5">
+<createdBy>M1TCH3L</createdBy>
+<createdTime>2024-07-08 08:00:57 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>8730B074-7650-BF30-40F3-AE2F1552D706</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="474F6A4C-2EE1-E4C8-D690-4B4E12C121DC">
+<designStoragePath>C:\list</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="463CF332-75ED-A133-B4D0-B08DED57B75D">
+<designStoragePath>C:\list</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
