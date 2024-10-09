@@ -1,4 +1,4 @@
-import SolicitarCitaService from '../services/solicitarCitaService.js';
+import SolicitarCitaService from '../services/SolicitarCitaService.js';
 
 const findAll = async (req, res) => {
     const result = await SolicitarCitaService.findAll();

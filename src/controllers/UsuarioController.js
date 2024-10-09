@@ -24,17 +24,17 @@ const findOne = async (req, res) => {
 const create = async (req, res) => {
   const { nombre, apellido, correo, DNI, NumCelular, contrasena, fecha_nacimiento, especialidad } = req.body;
 
-  // Identificar el rol basado en el dominio del correo electrónico
-  let rol = 'Paciente';  // Por defecto es paciente
+  console.log("Datos recibidos:", req.body);
+
+  let rol = 'Paciente';
   if (correo.endsWith('@validamente.cpi.com')) {
     rol = 'Psicologo';
   }
 
-  // Iniciamos una transacción para asegurarnos de que los datos se guarden correctamente
   const transaction = await sequelize.transaction();
 
   try {
-    // Crear el usuario
+    // Insertar en Usuario
     const newUsuario = await Usuario.create({
       nombre,
       apellido,
@@ -43,45 +43,43 @@ const create = async (req, res) => {
       NumCelular,
       contrasena,
       fecha_nacimiento,
-      rol,  // Asignamos el rol
+      rol,
     }, { transaction });
 
-    // Si es paciente, insertamos en la tabla Paciente
-    if (rol === 'Paciente') {
-      await Paciente.create({
-        Usuario_id_usuario: newUsuario.id_usuario,  // Vinculamos con el usuario creado
-        historial: '',  // El historial puede estar vacío inicialmente
-      }, { transaction });
-    }
-
-    // Si es psicólogo, insertamos en las tablas PsicologoGeneral y Especialista
     if (rol === 'Psicologo') {
-      // Crear PsicologoGeneral
+      console.log("Verificando especialidad:", especialidad);
+
+      if (!especialidad || especialidad.trim() === '') {
+        throw new Error("La especialidad es requerida para psicólogos");
+      }
+
+      // Insertar en PsicologoGeneral
       const newPsicologo = await PsicologoGeneral.create({
-        Usuario_id_usuario: newUsuario.id_usuario,  // Vinculamos con el usuario creado
+        Usuario_id_usuario: newUsuario.id_usuario, // Relacionar con el usuario recién creado
       }, { transaction });
 
-      // Verificar si la especialidad no está vacía antes de crear el Especialista
-      if (especialidad && especialidad.trim() !== '') {
-        await Especialista.create({
-          especialidad,
-          PsicologoGeneral_id_psicologogeneral: newPsicologo.id_psicologogeneral,
-        }, { transaction });
-      }
+      // Insertar en Especialista usando el ID del PsicologoGeneral creado
+      const newEspecialista = await Especialista.create({
+        especialidad: especialidad,
+        PsicologoGeneral_id_psicologogeneral: newPsicologo.id_psicologogeneral,  // Usar el ID de PsicologoGeneral
+      }, { transaction });
+
+      console.log("Especialista creado con ID:", newEspecialista.id_especialista);
     }
 
-    // Confirmamos la transacción
+    // Confirmar la transacción
     await transaction.commit();
-    
     return res.status(201).json(newUsuario);
 
   } catch (error) {
-    // Si hay algún error, revertimos la transacción
+    // Revertir la transacción si ocurre un error
     await transaction.rollback();
-    console.error('Error al crear el usuario:', error);
-    return res.status(500).json({ message: 'Error al crear el usuario', error });
+    console.error("Error al crear el usuario, psicólogo o especialista:", error);
+    return res.status(500).json({ message: 'Error al crear el usuario', error: error.message });
   }
 };
+
+
 
 const update = async (req, res) => {
   try {

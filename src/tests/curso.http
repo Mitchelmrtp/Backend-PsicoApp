@@ -64,18 +64,15 @@ Content-Type: application/json
 
 
 ################
-PUT http://localhost:3001/usuarios/create
+PUT http://localhost:3001/citas/
 Content-Type: application/json
 
 {
     
-  "nombre": "Juan",
-  "apellido": "Pérez",
-  "correo": "juan@validamente.cpi.com",
-  "DNI": "12345678",
-  "NumCelular": "987654321",
-  "contrasena": "password123",
-  "fecha_nacimiento": "1990-01-01"
+  "fecha": "2024-10-10",
+  "hora": "10:00:00",
+  "motivo": "Consulta psicológica inicial",
+  "pacienteId": 1  // El id del paciente
 
 
 }

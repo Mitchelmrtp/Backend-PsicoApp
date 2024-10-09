@@ -1,4 +1,4 @@
-import EspecialistaService from '../services/especialistaService.js';
+import EspecialistaService from '../services/EspecialistaService.js';
 
 const findAll = async (req, res) => {
     const result = await EspecialistaService.findAll();
@@ -12,8 +12,12 @@ const findOne = async (req, res) => {
 };
 
 const create = async (req, res) => {
-    const result = await EspecialistaService.create(req.body);
-    return res.status(201).json(result);
+    try {
+        const newEspecialista = await EspecialistaService.create(req.body);
+        return res.status(201).json(newEspecialista);
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al crear el especialista', error });
+    }
 };
 
 const update = async (req, res) => {

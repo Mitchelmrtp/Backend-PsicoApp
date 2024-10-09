@@ -1,7 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
-import Paciente from './paciente.js';
-import PsicologoGeneral from './psicologogeneral.js';  
+import PsicologoGeneral from './psicologogeneral.js';  // Importar PsicologoGeneral
 
 const Usuario = sequelize.define('Usuario', {
   id_usuario: {
@@ -42,13 +41,15 @@ const Usuario = sequelize.define('Usuario', {
   rol: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Paciente',  // Por defecto es paciente
+    defaultValue: 'Paciente',
   }
 }, {
+  freezeTableName: true,  // Evita que Sequelize pluralice el nombre de la tabla
   timestamps: false,
 });
 
-Usuario.hasOne(Paciente, { foreignKey: 'Usuario_id_usuario' });
+// Relación con PsicologoGeneral
 Usuario.hasOne(PsicologoGeneral, { foreignKey: 'Usuario_id_usuario' });
+PsicologoGeneral.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario' });
 
 export default Usuario;

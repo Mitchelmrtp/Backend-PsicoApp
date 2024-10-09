@@ -6,7 +6,7 @@ import Usuario from './usuario.js';
 import Paciente from './paciente.js';
 import PsicologoGeneral from './psicologogeneral.js';
 import Cuestionario from './cuestionario.js';
-import Especialista from './especialista.js';
+import Especialista from './Especialista.js';
 import Historial from './historial.js';
 import Horario from './horario.js';
 import Reporte from './reporte.js';
@@ -24,8 +24,11 @@ PsicologoGeneral.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario' });
 Paciente.hasMany(Cuestionario, { foreignKey: 'Paciente_idPaciente' });
 Cuestionario.belongsTo(Paciente, { foreignKey: 'Paciente_idPaciente' });
 
-PsicologoGeneral.hasMany(Especialista, { foreignKey: 'PsicologoGeneral_id_psicologogeneral' });
-Especialista.belongsTo(PsicologoGeneral, { foreignKey: 'PsicologoGeneral_id_psicologogeneral' });
+// Definir relación entre Especialista y PsicologoGeneral (eliminar duplicado)
+Especialista.belongsTo(PsicologoGeneral, {
+  foreignKey: 'PsicologoGeneral_id_psicologogeneral',
+  as: 'psicologoGeneral'
+});
 
 Paciente.hasMany(Historial, { foreignKey: 'Paciente_idPaciente' });
 Historial.belongsTo(Paciente, { foreignKey: 'Paciente_idPaciente' });
@@ -46,7 +49,7 @@ Reporte.belongsTo(Sesion, { foreignKey: 'Sesion_id_sesion' });
 export {
     Usuario,
     Paciente,
-    PsicologoGeneral,
+    PsicologoGeneral,  // Asegúrate de que esto esté presente
     Cuestionario,
     Especialista,
     Historial,
@@ -55,4 +58,5 @@ export {
     RevisionDiagnostica,
     Sesion,
     SolicitarCita
-};
+  };
+  

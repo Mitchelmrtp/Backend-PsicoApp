@@ -10,9 +10,15 @@ const PsicologoGeneral = sequelize.define('PsicologoGeneral', {
   Usuario_id_usuario: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    references: {
+      model: 'Usuario',
+      key: 'id_usuario',
+    },
+    onDelete: 'CASCADE',
   }
 }, {
-  timestamps: false
+  timestamps: false,
+  freezeTableName: true,  // Evita pluralización automática
 });
 
 export default PsicologoGeneral;

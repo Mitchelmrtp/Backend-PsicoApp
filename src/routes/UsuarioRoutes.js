@@ -1,5 +1,5 @@
 import express from 'express';
-import UsuarioController from '../controllers/usuarioController.js';  // Asegúrate de que la ruta es correcta
+import UsuarioController from '../controllers/UsuarioController.js';  // Asegúrate de que la ruta es correcta
 
 const router = express.Router();
 

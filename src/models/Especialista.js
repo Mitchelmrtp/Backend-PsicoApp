@@ -1,6 +1,5 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
-import PsicologoGeneral from './psicologogeneral.js';
 
 const Especialista = sequelize.define('Especialista', {
   id_especialista: {
@@ -10,20 +9,19 @@ const Especialista = sequelize.define('Especialista', {
   },
   especialidad: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false,  // No permitir nulos, la especialidad es obligatoria
   },
   PsicologoGeneral_id_psicologogeneral: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: PsicologoGeneral,
+      model: 'PsicologoGeneral',
       key: 'id_psicologogeneral',
     },
   },
 }, {
-  timestamps: false
+  timestamps: false,
+  freezeTableName: true, // Evita pluralización
 });
-
-Especialista.belongsTo(PsicologoGeneral, { foreignKey: 'PsicologoGeneral_id_psicologogeneral' });
 
 export default Especialista;

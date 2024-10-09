@@ -1,5 +1,5 @@
 import express from 'express';
-import EspecialistaController from '../controllers/especialistaController.js';
+import EspecialistaController from '../controllers/EspecialistaController.js';
 
 const router = express.Router();
 

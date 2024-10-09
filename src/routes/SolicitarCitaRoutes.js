@@ -1,5 +1,5 @@
 import express from 'express';
-import SolicitarCitaController from '../controllers/solicitarCitaController.js';
+import SolicitarCitaController from '../controllers/SolicitarCitaController.js';
 
 const router = express.Router();
 

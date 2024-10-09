@@ -1,5 +1,4 @@
-import Especialista from '../models/especialista.js';
-import PsicologoGeneral from '../models/psicologogeneral.js';
+import Especialista from '../models/Especialista.js';
 
 const findAll = async () => {
   return await Especialista.findAll();
@@ -10,22 +9,10 @@ const findOne = async (id) => {
 };
 
 const create = async (data) => {
-  try {
-    // Verificar que el PsicologoGeneral_id_psicologogeneral sea válido antes de insertar
-    const psicologoGeneral = await PsicologoGeneral.findByPk(data.PsicologoGeneral_id_psicologogeneral);
-    
-    if (!psicologoGeneral) {
-      throw new Error(`PsicologoGeneral con ID ${data.PsicologoGeneral_id_psicologogeneral} no encontrado.`);
-    }
+  return await Especialista.create(data);
 
-    // Si la validación es exitosa, crear el especialista
-    return await Especialista.create(data);
-    
-  } catch (error) {
-    console.error('Error al crear el especialista:', error);
-    throw error;
-  }
 };
+
 
 const update = async (id, data) => {
   const especialista = await Especialista.findByPk(id);

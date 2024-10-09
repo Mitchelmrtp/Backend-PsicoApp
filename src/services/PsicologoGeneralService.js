@@ -13,20 +13,20 @@ const create = async (data) => {
 };
 
 const update = async (id, data) => {
-    const doctor = await PsicologoGeneral.findByPk(id);
-    if (!doctor) {
+    const psicologogeneral = await PsicologoGeneral.findByPk(id);
+    if (!psicologogeneral) {
         throw new Error('Psicólogo general no encontrado');
     }
-    await doctor.update(data);
-    return doctor;
+    await psicologogeneral.update(data);
+    return psicologogeneral;
 };
 
 const remove = async (id) => {
-    const doctor = await PsicologoGeneral.findByPk(id);
-    if (!doctor) {
+    const psicologogeneral = await PsicologoGeneral.findByPk(id);
+    if (!psicologogeneral) {
         throw new Error('Psicólogo general no encontrado');
     }
-    await doctor.destroy();
+    await psicologogeneral.destroy();
 };
 
 export default { findAll, findOne, create, update, remove };
