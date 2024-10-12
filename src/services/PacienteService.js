@@ -9,14 +9,10 @@ const findAll = async () => {
     }
 };
 
-const create = async (paciente) => {
-    try {
-        return await Paciente.create(paciente);
-    } catch (err) {
-        console.error(err);
-        return null;
-    }
-};
+const create = async (data) => {
+    return await Paciente.create(data);
+  
+  };
 
 const findOne = async (id) => {
     try {

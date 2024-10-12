@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Especialista_id_especialista" id="ED0B67B4-A96A-44E8-4952-C28F527DF2CC">
+<Column name="Psicologo_id_Psicologo" id="ED0B67B4-A96A-44E8-4952-C28F527DF2CC">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-05 07:52:04 UTC</createdTime>
 <generatorID>F42C57CF-7005-CCD1-1BC0-7AE1B24F19D4</generatorID>
@@ -104,7 +104,7 @@
 <colUsage columnID="D5078F53-33DA-0E39-F89C-889FF9D5C4E2"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2C619C5D-43DA-D6BE-0C4E-28553BB9DF0F" name="Sesion_Especialista_FK">
+<ind_PK_UK id="2C619C5D-43DA-D6BE-0C4E-28553BB9DF0F" name="Sesion_Psicologo_FK">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-05 07:52:04 UTC</createdTime>
 <generatorID>CE717334-A2C8-A084-4B2B-AA2862485B4C</generatorID>

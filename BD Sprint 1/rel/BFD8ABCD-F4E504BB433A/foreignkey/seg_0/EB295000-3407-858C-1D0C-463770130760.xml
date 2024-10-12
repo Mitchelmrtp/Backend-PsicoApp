@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EB295000-3407-858C-1D0C-463770130760" containerWithKeyObject="31939B0B-0A76-3FE8-BA01-80913295BDC4" localFKIndex="BFCFAFEF-0EAF-BCF6-067A-E50586C09969" name="Especialista_PsicologoGeneral_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EB295000-3407-858C-1D0C-463770130760" containerWithKeyObject="31939B0B-0A76-3FE8-BA01-80913295BDC4" localFKIndex="BFCFAFEF-0EAF-BCF6-067A-E50586C09969" name="Psicologo_PsicologoGeneral_FK">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-05 07:52:04 UTC</createdTime>
 <generatorID>512B26D7-29AA-CC0A-FF25-76A518D1D011</generatorID>

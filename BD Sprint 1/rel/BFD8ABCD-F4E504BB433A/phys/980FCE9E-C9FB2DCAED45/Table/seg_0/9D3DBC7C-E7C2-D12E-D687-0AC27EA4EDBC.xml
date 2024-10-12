@@ -25,7 +25,7 @@
 <createdTime>2024-10-07 05:38:17 UTC</createdTime>
 <ownerDesignName>BD Sprint 1</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Especialista_id_especialista" id="ED0B67B4-A96A-44E8-4952-C28F527DF2CC">
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Psicologo_id_Psicologo" id="ED0B67B4-A96A-44E8-4952-C28F527DF2CC">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-07 05:38:17 UTC</createdTime>
 <ownerDesignName>BD Sprint 1</ownerDesignName>
@@ -37,7 +37,7 @@
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="Sesion_Especialista_FK" id="2C619C5D-43DA-D6BE-0C4E-28553BB9DF0F">
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="Sesion_Psicologo_FK" id="2C619C5D-43DA-D6BE-0C4E-28553BB9DF0F">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-07 05:38:17 UTC</createdTime>
 <ownerDesignName>BD Sprint 1</ownerDesignName>

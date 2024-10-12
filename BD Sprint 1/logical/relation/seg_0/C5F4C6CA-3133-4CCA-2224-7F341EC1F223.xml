@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Especialista_PsicologoGeneral_FK" directorySegmentName="seg_0" id="C5F4C6CA-3133-4CCA-2224-7F341EC1F223">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Psicologo_PsicologoGeneral_FK" directorySegmentName="seg_0" id="C5F4C6CA-3133-4CCA-2224-7F341EC1F223">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-05 08:00:41 UTC</createdTime>
 <generatorID>EB295000-3407-858C-1D0C-463770130760</generatorID>

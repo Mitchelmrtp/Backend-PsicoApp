@@ -14,6 +14,11 @@ const Paciente = sequelize.define('Paciente', {
   Usuario_id_usuario: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    references: {
+      model: 'Usuario',
+      key: 'id_usuario',
+    },
+    onDelete: 'CASCADE',
   }
 }, {
   timestamps: false

@@ -5,11 +5,11 @@ Este proyecto es un sistema de gestión de pacientes diseñado para clínicas y 
 ## Características Principales
 
 - **Gestión de Pacientes**: Registro y seguimiento de pacientes con sus historiales clínicos.
-- **Gestión de Especialistas**: Manejo de datos de psicólogos, horarios y especialidades.
-- **Sesiones y Diagnósticos**: Registro de sesiones con especialistas y diagnósticos detallados.
+- **Gestión de Psicologos**: Manejo de datos de psicólogos, horarios y especialidades.
+- **Sesiones y Diagnósticos**: Registro de sesiones con Psicologos y diagnósticos detallados.
 - **Cuestionarios y Reportes**: Creación de cuestionarios y generación de reportes automáticos de cada sesión.
 - **Sistema de Citas**: Solicitud y administración de citas para los pacientes.
-- **Autenticación y Roles de Usuario**: Sistema de autenticación para diferenciar entre los roles de usuarios (pacientes, especialistas, administradores).
+- **Autenticación y Roles de Usuario**: Sistema de autenticación para diferenciar entre los roles de usuarios (pacientes, Psicologos, administradores).
 
 ## Requisitos
 

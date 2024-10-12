@@ -3,12 +3,11 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 // Importar rutas desde el directorio correcto
-import PsicologoGeneralRoutes from './src/routes/psicologoGeneralRoutes.js';
 import UsuarioRoutes from './src/routes/usuarioRoutes.js';
 import SolicitarCitaRoutes from './src/routes/solicitarCitaRoutes.js';  // Asegúrate que esté nombrado correctamente
 import PacienteRoutes from './src/routes/pacienteRoutes.js';
 import CuestionarioRoutes from './src/routes/cuestionarioRoutes.js';
-import EspecialistaRoutes from './src/routes/especialistaRoutes.js';
+import PsicologoRoutes from './src/routes/PsicologoRoutes.js';
 import HistorialRoutes from './src/routes/historialRoutes.js';
 import HorarioRoutes from './src/routes/horarioRoutes.js';
 import ReporteRoutes from './src/routes/reporteRoutes.js';
@@ -30,12 +29,11 @@ app.get('/', (req, res) => {
 });
 
 // Configurar rutas
-app.use("/PsicologoGeneral", PsicologoGeneralRoutes);
 app.use("/usuarios", UsuarioRoutes);
 app.use("/citas", SolicitarCitaRoutes);  // Verifica que el nombre de la ruta coincida con el archivo de ruta
 app.use("/pacientes", PacienteRoutes);
 app.use("/cuestionarios", CuestionarioRoutes);
-app.use("/especialistas", EspecialistaRoutes);
+app.use("/Psicologos", PsicologoRoutes);
 app.use("/historiales", HistorialRoutes);
 app.use("/horarios", HorarioRoutes);
 app.use("/reportes", ReporteRoutes);

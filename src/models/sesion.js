@@ -7,7 +7,7 @@ const Sesion = sequelize.define('Sesion', {
     primaryKey: true,
     autoIncrement: true,
   },
-  Especialista_id_especialista: {
+  Psicologo_id_Psicologo: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },

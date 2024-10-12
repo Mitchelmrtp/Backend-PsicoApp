@@ -1,4 +1,4 @@
-import { Usuario, Paciente, PsicologoGeneral } from '../models/index.js';
+import { Usuario, Paciente, Psicologo } from '../models/index.js';
 
 const findAll = async () => {
   return await Usuario.findAll();
@@ -19,7 +19,7 @@ const create = async (data) => {
 
     // Si el rol es "Psicologo", creamos un registro en PsicologoGeneral
     if (data.rol === 'Psicologo') {
-      await PsicologoGeneral.create({ Usuario_id_usuario: newUsuario.id_usuario });
+      await Psicologo.create({ Usuario_id_usuario: newUsuario.id_usuario });
     }
 
     return newUsuario;

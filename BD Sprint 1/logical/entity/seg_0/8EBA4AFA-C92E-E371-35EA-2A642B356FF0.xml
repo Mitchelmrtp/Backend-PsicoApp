@@ -29,7 +29,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Especialista id especialista" id="30C77415-EE56-07D8-AAC5-DF32FFA26F82">
+<Attribute name="Psicologo id Psicologo" id="30C77415-EE56-07D8-AAC5-DF32FFA26F82">
 <createdBy>M1TCH3L</createdBy>
 <createdTime>2024-10-05 08:00:41 UTC</createdTime>
 <generatorID>2A2B0188-A5AB-BED1-52CC-D0D1C7D0014D</generatorID>

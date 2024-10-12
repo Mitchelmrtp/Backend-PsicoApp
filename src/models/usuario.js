@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
-import PsicologoGeneral from './psicologogeneral.js';  // Importar PsicologoGeneral
+import Psicologo from './Psicologo.js';
 
 const Usuario = sequelize.define('Usuario', {
   id_usuario: {
@@ -48,8 +48,8 @@ const Usuario = sequelize.define('Usuario', {
   timestamps: false,
 });
 
-// Relación con PsicologoGeneral
-Usuario.hasOne(PsicologoGeneral, { foreignKey: 'Usuario_id_usuario' });
-PsicologoGeneral.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario' });
+// Relación con Psicologo: Un Usuario puede tener muchos Psicologos
+Usuario.hasMany(Psicologo, { foreignKey: 'Usuario_id_usuario', as: 'psicologos' });
+Psicologo.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario', as: 'usuario' });
 
 export default Usuario;

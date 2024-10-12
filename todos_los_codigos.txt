@@ -1,4 +1,94 @@
 
+database.js:
+(
+import Sequelize from 'sequelize'
+
+const hostname = '127.0.0.1'
+const username = 'postgres'
+const password = '123'
+const database = 'psicoapp'
+const port = 5432
+const dialect = 'postgres'
+
+const sequelize = new Sequelize(database, username, password, {
+    host: hostname,
+    port,
+    dialect: dialect,
+    operatorAliases: false,
+    pool: {
+        max: 10,
+        min: 0,
+        acquire: 20000,
+        idle: 5000
+    }
+})
+
+
+export default sequelize
+)
+
+PacienteController.js:
+(
+import PacienteService from "../services/pacienteService.js";
+
+const findAll = async (req, res) => {
+    const result = await PacienteService.findAll();
+    return sendResponse(result, res);
+};
+
+const findOne = async (req, res) => {
+    const { id } = req.params;
+    const result = await PacienteService.findOne(id);
+    return sendResponse(result, res);
+};
+
+const create = async (req, res) => {
+    const result = await PacienteService.create(req.body);
+    return sendResponse(result, res);
+};
+
+const update = async (req, res) => {
+    const result = await PacienteService.update(req.body);
+    return sendResponse(result, res);
+};
+
+const remove = async (req, res) => {
+    const { id } = req.params;
+    const result = await PacienteService.remove(id);
+    return sendResponse(result, res);
+};
+
+const sendResponse = (result, res) => {
+    if (result)
+        return res.status(200).json(result);
+    else
+        return res.status(500).json({ message: 'Ha ocurrido un error' });
+};
+
+// Controlador en Node.js para obtener el Paciente por id_usuario
+async function getPacienteByUsuarioId(req, res) {
+    try {
+      const usuarioId = req.params.usuarioId;
+      const paciente = await Paciente.findOne({
+        where: { Usuario_id_usuario: usuarioId }
+      });
+  
+      if (paciente) {
+        return res.status(200).json(paciente);
+      } else {
+        return res.status(404).json({ message: 'Paciente no encontrado' });
+      }
+    } catch (error) {
+      console.error('Error al obtener el paciente:', error);
+      return res.status(500).json({ message: 'Error del servidor' });
+    }
+  }
+  
+
+export default { findAll, findOne, create, update, remove, getPacienteByUsuarioId };
+
+)
+
 PsicologoGeneralController.js:
 (
 import PsicologoGeneralService from '../services/psicologogeneralService.js';
@@ -58,7 +148,7 @@ export default { findAll, findOne, create, update, remove };
 UsuarioController.js:
 (
 import UsuarioService from '../services/usuarioService.js';
-import { Usuario, Paciente, PsicologoGeneral, Especialista } from '../models/index.js';
+import { Usuario, Paciente, PsicologoGeneral, Psicologo } from '../models/index.js';
 import sequelize from '../config/database.js';  // Importamos sequelize para transacciones
 
 const findAll = async (req, res) => {
@@ -83,6 +173,8 @@ const findOne = async (req, res) => {
 const create = async (req, res) => {
   const { nombre, apellido, correo, DNI, NumCelular, contrasena, fecha_nacimiento, especialidad } = req.body;
 
+  console.log("Datos recibidos:", req.body);
+
   let rol = 'Paciente';
   if (correo.endsWith('@validamente.cpi.com')) {
     rol = 'Psicologo';
@@ -91,7 +183,7 @@ const create = async (req, res) => {
   const transaction = await sequelize.transaction();
 
   try {
-    // Crear usuario
+    // Insertar en Usuario
     const newUsuario = await Usuario.create({
       nombre,
       apellido,
@@ -104,34 +196,37 @@ const create = async (req, res) => {
     }, { transaction });
 
     if (rol === 'Psicologo') {
-      // Crear PsicologoGeneral
+      console.log("Verificando especialidad:", especialidad);
+
+      if (!especialidad || especialidad.trim() === '') {
+        throw new Error("La especialidad es requerida para psicólogos");
+      }
+
+      // Insertar en PsicologoGeneral
       const newPsicologo = await PsicologoGeneral.create({
-        Usuario_id_usuario: newUsuario.id_usuario,
+        Usuario_id_usuario: newUsuario.id_usuario, // Relacionar con el usuario recién creado
       }, { transaction });
 
-      const idPsicologoGeneral = newPsicologo.id_psicologogeneral;
-      console.log("ID PsicologoGeneral generado:", idPsicologoGeneral);
-
-      // Crear Especialista
-      const newEspecialista = await Especialista.create({
-        especialidad: especialidad, // Asegúrate de que la especialidad se está pasando correctamente
-        PsicologoGeneral_id_psicologogeneral: idPsicologoGeneral, // Usa el ID generado
+      // Insertar en Psicologo usando el ID del PsicologoGeneral creado
+      const newPsicologo = await Psicologo.create({
+        especialidad: especialidad,
+        PsicologoGeneral_id_psicologogeneral: newPsicologo.id_psicologogeneral,  // Usar el ID de PsicologoGeneral
       }, { transaction });
 
-      console.log("Especialista creado con ID:", newEspecialista.id_especialista);
+      console.log("Psicologo creado con ID:", newPsicologo.id_Psicologo);
     }
 
     // Confirmar la transacción
     await transaction.commit();
     return res.status(201).json(newUsuario);
+
   } catch (error) {
-    // Revertir la transacción en caso de error
+    // Revertir la transacción si ocurre un error
     await transaction.rollback();
-    console.error("Error al crear el usuario, psicólogo o paciente:", error);
+    console.error("Error al crear el usuario, psicólogo o Psicologo:", error);
     return res.status(500).json({ message: 'Error al crear el usuario', error: error.message });
   }
 };
-
 
 
 
@@ -173,41 +268,117 @@ export default { findAll, findOne, create, update, remove, validate };
 
 )
 
-EspecialistaController.js:
+PsicologoController.js:
 (
-import EspecialistaService from '../services/EspecialistaService.js';
+import PsicologoService from '../services/PsicologoService.js';
 
 const findAll = async (req, res) => {
-    const result = await EspecialistaService.findAll();
+    const result = await PsicologoService.findAll();
     return res.status(200).json(result);
 };
 
 const findOne = async (req, res) => {
     const { id } = req.params;
-    const result = await EspecialistaService.findOne(id);
-    return result ? res.status(200).json(result) : res.status(404).json({ message: 'Especialista no encontrado' });
+    const result = await PsicologoService.findOne(id);
+    return result ? res.status(200).json(result) : res.status(404).json({ message: 'Psicologo no encontrado' });
 };
 
 const create = async (req, res) => {
     try {
-        const newEspecialista = await EspecialistaService.create(req.body);
-        return res.status(201).json(newEspecialista);
+        const newPsicologo = await PsicologoService.create(req.body);
+        return res.status(201).json(newPsicologo);
     } catch (error) {
-        return res.status(500).json({ message: 'Error al crear el especialista', error });
+        return res.status(500).json({ message: 'Error al crear el Psicologo', error });
     }
 };
 
 const update = async (req, res) => {
-    const result = await EspecialistaService.update(req.params.id, req.body);
+    const result = await PsicologoService.update(req.params.id, req.body);
     return res.status(200).json(result);
 };
 
 const remove = async (req, res) => {
-    const result = await EspecialistaService.remove(req.params.id);
-    return res.status(200).json({ message: 'Especialista eliminado correctamente' });
+    const result = await PsicologoService.remove(req.params.id);
+    return res.status(200).json({ message: 'Psicologo eliminado correctamente' });
 };
 
 export default { findAll, findOne, create, update, remove };
+
+)
+
+AuthMiddleware.js:
+(
+import jwt from 'jsonwebtoken';
+
+const authMiddleware = (req, res, next) => {
+    const token = req.headers['authorization'];
+    if (!token) return res.status(403).json({ message: 'Token no proporcionado' });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) return res.status(500).json({ message: 'Fallo en la autenticación' });
+
+        req.userId = decoded.id;
+        next();
+    });
+};
+
+export default authMiddleware;
+
+)
+
+paciente.js:
+(
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
+
+const Paciente = sequelize.define('Paciente', {
+  idPaciente: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  historial: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  Usuario_id_usuario: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  }
+}, {
+  timestamps: false
+});
+
+export default Paciente;
+
+)
+
+psicologogeneral.js:
+(
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
+
+const PsicologoGeneral = sequelize.define('PsicologoGeneral', {
+  id_psicologogeneral: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  Usuario_id_usuario: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'Usuario',
+      key: 'id_usuario',
+    },
+    onDelete: 'CASCADE',
+  }
+}, {
+  timestamps: false,
+  freezeTableName: true,  // Evita pluralización automática
+});
+
+export default PsicologoGeneral;
 
 )
 
@@ -215,8 +386,7 @@ usuario.js:
 (
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
-import Paciente from './paciente.js';
-import PsicologoGeneral from './psicologogeneral.js';  
+import PsicologoGeneral from './psicologogeneral.js';  // Importar PsicologoGeneral
 
 const Usuario = sequelize.define('Usuario', {
   id_usuario: {
@@ -257,66 +427,50 @@ const Usuario = sequelize.define('Usuario', {
   rol: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Paciente',  // Por defecto es paciente
+    defaultValue: 'Paciente',
   }
 }, {
+  freezeTableName: true,  // Evita que Sequelize pluralice el nombre de la tabla
   timestamps: false,
 });
 
-Usuario.hasOne(Paciente, { foreignKey: 'Usuario_id_usuario' });
+// Relación con PsicologoGeneral
 Usuario.hasOne(PsicologoGeneral, { foreignKey: 'Usuario_id_usuario' });
+PsicologoGeneral.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario' });
 
 export default Usuario;
 
 )
 
-Especialista.js:
+Psicologo.js:
 (
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
-const Especialista = sequelize.define('Especialista', {
-  id_especialista: {
+const Psicologo = sequelize.define('Psicologo', {
+  id_Psicologo: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
   especialidad: {
     type: DataTypes.STRING,
-    allowNull: true,  // Nos aseguramos de que no se permitan valores nulos
+    allowNull: false,  // No permitir nulos, la especialidad es obligatoria
   },
   PsicologoGeneral_id_psicologogeneral: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    references: {
+      model: 'PsicologoGeneral',
+      key: 'id_psicologogeneral',
+    },
   },
 }, {
-  timestamps: false
+  timestamps: false,
+  freezeTableName: true, // Evita pluralización
 });
 
-export default Especialista;
-
-)
-
-psicologogeneral.js:
-(
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
-
-const PsicologoGeneral = sequelize.define('PsicologoGeneral', {
-  id_psicologogeneral: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  Usuario_id_usuario: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  }
-}, {
-  timestamps: false
-});
-
-export default PsicologoGeneral;
+export default Psicologo;
 
 )
 
@@ -330,7 +484,7 @@ import Usuario from './usuario.js';
 import Paciente from './paciente.js';
 import PsicologoGeneral from './psicologogeneral.js';
 import Cuestionario from './cuestionario.js';
-import Especialista from './Especialista.js';
+import Psicologo from './Psicologo.js';
 import Historial from './historial.js';
 import Horario from './horario.js';
 import Reporte from './reporte.js';
@@ -348,8 +502,8 @@ PsicologoGeneral.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario' });
 Paciente.hasMany(Cuestionario, { foreignKey: 'Paciente_idPaciente' });
 Cuestionario.belongsTo(Paciente, { foreignKey: 'Paciente_idPaciente' });
 
-// Definir relación entre Especialista y PsicologoGeneral (eliminar duplicado)
-Especialista.belongsTo(PsicologoGeneral, {
+// Definir relación entre Psicologo y PsicologoGeneral (eliminar duplicado)
+Psicologo.belongsTo(PsicologoGeneral, {
   foreignKey: 'PsicologoGeneral_id_psicologogeneral',
   as: 'psicologoGeneral'
 });
@@ -360,7 +514,7 @@ Historial.belongsTo(Paciente, { foreignKey: 'Paciente_idPaciente' });
 PsicologoGeneral.hasMany(Horario, { foreignKey: 'PsicologoGeneral_id_psicologogeneral' });
 Horario.belongsTo(PsicologoGeneral, { foreignKey: 'PsicologoGeneral_id_psicologogeneral' });
 
-Sesion.belongsTo(Especialista, { foreignKey: 'Especialista_id_especialista' });
+Sesion.belongsTo(Psicologo, { foreignKey: 'Psicologo_id_Psicologo' });
 Sesion.belongsTo(Paciente, { foreignKey: 'Paciente_idPaciente' });
 Sesion.belongsTo(RevisionDiagnostica, { foreignKey: 'RevisiónDiagnostica_idDiagnostico' });
 
@@ -375,7 +529,7 @@ export {
     Paciente,
     PsicologoGeneral,  // Asegúrate de que esto esté presente
     Cuestionario,
-    Especialista,
+    Psicologo,
     Historial,
     Horario,
     Reporte,
@@ -386,40 +540,72 @@ export {
   
 )
 
-PsicologoGeneralService.js:
+PacienteRoutes.js:
 (
-import PsicologoGeneral from '../models/psicologogeneral.js';
+import express from 'express';
+import PacienteController from '../controllers/pacienteController.js';
 
-const findAll = async () => {
-    return await PsicologoGeneral.findAll();
-};
+const router = express.Router();
 
-const findOne = async (id) => {
-    return await PsicologoGeneral.findByPk(id);
-};
+router.get('/', PacienteController.findAll);
+router.get('/:id', PacienteController.findOne);
+router.post('/', PacienteController.create);
+router.put('/:id', PacienteController.update);
+router.delete('/:id', PacienteController.remove);
 
-const create = async (data) => {
-    return await PsicologoGeneral.create(data);
-};
+export default router;
 
-const update = async (id, data) => {
-    const psicologogeneral = await PsicologoGeneral.findByPk(id);
-    if (!psicologogeneral) {
-        throw new Error('Psicólogo general no encontrado');
-    }
-    await psicologogeneral.update(data);
-    return psicologogeneral;
-};
+)
 
-const remove = async (id) => {
-    const psicologogeneral = await PsicologoGeneral.findByPk(id);
-    if (!psicologogeneral) {
-        throw new Error('Psicólogo general no encontrado');
-    }
-    await psicologogeneral.destroy();
-};
+PsicologoGeneralRoutes.js:
+(
+import express from 'express';
+import PsicologoGeneralController from '../controllers/psicologoGeneralController.js';
 
-export default { findAll, findOne, create, update, remove };
+const router = express.Router();
+
+router.get('/', PsicologoGeneralController.findAll);
+router.get('/:id', PsicologoGeneralController.findOne);
+router.post('/', PsicologoGeneralController.create);
+router.put('/:id', PsicologoGeneralController.update);
+router.delete('/:id', PsicologoGeneralController.remove);
+
+export default router;
+
+)
+
+UsuarioRoutes.js:
+(
+import express from 'express';
+import UsuarioController from '../controllers/UsuarioController.js';  // Asegúrate de que la ruta es correcta
+
+const router = express.Router();
+
+router.get('/', UsuarioController.findAll);
+router.get('/:id', UsuarioController.findOne);
+router.post('/', UsuarioController.create);
+router.put('/:id', UsuarioController.update);
+router.delete('/:id', UsuarioController.remove);
+router.post('/validate', UsuarioController.validate);  // Para la validación de login
+
+export default router;
+
+)
+
+PsicologoRoutes.js:
+(
+import express from 'express';
+import PsicologoController from '../controllers/PsicologoController.js';
+
+const router = express.Router();
+
+router.get('/', PsicologoController.findAll);
+router.get('/:id', PsicologoController.findOne);
+router.post('/', PsicologoController.create);
+router.put('/:id', PsicologoController.update);
+router.delete('/:id', PsicologoController.remove);
+
+export default router;
 
 )
 
@@ -492,37 +678,132 @@ export default { findAll, findOne, create, update, remove, validate };
 
 )
 
-EspecialistaService.js:
+PsicologoService.js:
 (
-import Especialista from '../models/Especialista.js';
+import Psicologo from '../models/Psicologo.js';
 
 const findAll = async () => {
-  return await Especialista.findAll();
+  return await Psicologo.findAll();
 };
 
 const findOne = async (id) => {
-  return await Especialista.findByPk(id);
+  return await Psicologo.findByPk(id);
 };
 
 const create = async (data) => {
-  return await Especialista.create(data);
+  return await Psicologo.create(data);
 
 };
 
 
 const update = async (id, data) => {
-  const especialista = await Especialista.findByPk(id);
+  const Psicologo = await Psicologo.findByPk(id);
   
-  if (!especialista) {
-    throw new Error('Especialista no encontrado');
+  if (!Psicologo) {
+    throw new Error('Psicologo no encontrado');
   }
 
-  await especialista.update(data);
-  return especialista;
+  await Psicologo.update(data);
+  return Psicologo;
 };
 
 const remove = async (id) => {
-  return await Especialista.destroy({ where: { id_especialista: id } });
+  return await Psicologo.destroy({ where: { id_Psicologo: id } });
+};
+
+export default { findAll, findOne, create, update, remove };
+
+)
+
+PacienteService.js:
+(
+import Paciente from '../models/paciente.js';
+
+const findAll = async () => {
+    try {
+        return await Paciente.findAll();
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+};
+
+const create = async (paciente) => {
+    try {
+        return await Paciente.create(paciente);
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+};
+
+const findOne = async (id) => {
+    try {
+        return await Paciente.findOne({ where: { idPaciente: id } });
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+};
+
+const update = async (paciente) => {
+    try {
+        const foundPaciente = await Paciente.findByPk(paciente.idPaciente);
+        if (!foundPaciente) return null;
+
+        await foundPaciente.update(paciente);
+        return foundPaciente;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+};
+
+const remove = async (id) => {
+    try {
+        const result = await Paciente.destroy({ where: { idPaciente: id } });
+        return result === 1;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+};
+
+export default { findAll, create, findOne, update, remove };
+
+)
+
+PsicologoGeneralService.js:
+(
+import PsicologoGeneral from '../models/psicologogeneral.js';
+
+const findAll = async () => {
+    return await PsicologoGeneral.findAll();
+};
+
+const findOne = async (id) => {
+    return await PsicologoGeneral.findByPk(id);
+};
+
+const create = async (data) => {
+    return await PsicologoGeneral.create(data);
+};
+
+const update = async (id, data) => {
+    const psicologogeneral = await PsicologoGeneral.findByPk(id);
+    if (!psicologogeneral) {
+        throw new Error('Psicólogo general no encontrado');
+    }
+    await psicologogeneral.update(data);
+    return psicologogeneral;
+};
+
+const remove = async (id) => {
+    const psicologogeneral = await PsicologoGeneral.findByPk(id);
+    if (!psicologogeneral) {
+        throw new Error('Psicólogo general no encontrado');
+    }
+    await psicologogeneral.destroy();
 };
 
 export default { findAll, findOne, create, update, remove };
