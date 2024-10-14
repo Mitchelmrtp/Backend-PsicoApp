@@ -46,6 +46,8 @@ const Usuario = sequelize.define('Usuario', {
 }, {
   freezeTableName: true,  // Evita que Sequelize pluralice el nombre de la tabla
   timestamps: false,
+  tableName: 'Usuario'
+
 });
 
 // Relación con Psicologo: Un Usuario puede tener muchos Psicologos

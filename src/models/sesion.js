@@ -2,33 +2,46 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
 const Sesion = sequelize.define('Sesion', {
-  id_sesion: {
+  idSesion: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  Psicologo_id_Psicologo: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   fecha: {
-    type: DataTypes.DATE,
-    allowNull: true,
+    type: DataTypes.DATEONLY,
+    allowNull: false,
   },
   hora: {
     type: DataTypes.TIME,
+    allowNull: false,
+  },
+  reporteProgreso: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  reporteEmociones: {
+    type: DataTypes.STRING,
     allowNull: true,
   },
   Paciente_idPaciente: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    references: {
+      model: 'Paciente',
+      key: 'idPaciente',
+    },
+    onDelete: 'CASCADE',
   },
-  RevisiónDiagnostica_idDiagnostico: {
+  Psicologo_idPsicologo: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-  }
+    references: {
+      model: 'Psicologo',
+      key: 'id_psicologo',  // Asegúrate de que el nombre coincide con el de Psicologo
+    },
+    onDelete: 'CASCADE',
+  },
 }, {
-  timestamps: false
+  timestamps: false,
+  tableName: 'Sesion'
 });
 
 export default Sesion;

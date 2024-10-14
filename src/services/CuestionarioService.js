@@ -1,26 +1,33 @@
+// CuestionarioService.js
 import Cuestionario from '../models/cuestionario.js';
 
-const findAll = async () => {
-    return await Cuestionario.findAll();
+const getAllCuestionarios = async () => {
+  try {
+      const cuestionarios = await Cuestionario.findAll();
+      return cuestionarios; // Devuelve los datos obtenidos
+  } catch (error) {
+      console.error('Error al obtener los cuestionarios:', error);
+      throw error; // Lanza el error al controlador
+  }
 };
 
-const findOne = async (id) => {
-    return await Cuestionario.findByPk(id);
+
+const createCuestionario = async (data) => {
+  return await Cuestionario.create(data);
 };
 
-const create = async (data) => {
-    return await Cuestionario.create(data);
-};
-
-const update = async (id, data) => {
-    const cuestionario = await Cuestionario.findByPk(id);
-    if (!cuestionario) throw new Error('Cuestionario no encontrado');
-    await cuestionario.update(data);
+const updateCuestionarioRespuesta = async (idCuestionario, respuesta) => {
+  const cuestionario = await Cuestionario.findByPk(idCuestionario);
+  if (cuestionario) {
+    cuestionario.respuesta = respuesta;
+    await cuestionario.save();
     return cuestionario;
+  }
+  throw new Error('Cuestionario no encontrado');
 };
 
-const remove = async (id) => {
-    return await Cuestionario.destroy({ where: { id_cuestionario: id } });
+export default {
+  getAllCuestionarios,
+  createCuestionario,
+  updateCuestionarioRespuesta
 };
-
-export default { findAll, findOne, create, update, remove };

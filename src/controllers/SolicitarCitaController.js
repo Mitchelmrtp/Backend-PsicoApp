@@ -1,4 +1,5 @@
 import SolicitarCitaService from '../services/SolicitarCitaService.js';
+import SolicitarCita from '../models/SolicitarCita.js';
 
 const findAll = async (req, res) => {
     const result = await SolicitarCitaService.findAll();
@@ -12,9 +13,29 @@ const findOne = async (req, res) => {
 };
 
 const create = async (req, res) => {
-    const result = await SolicitarCitaService.create(req.body);
-    return res.status(201).json(result);
+    try {
+        const { fechaHora, motivo, pacienteId } = req.body;
+
+        // Extraer la fecha y la hora desde el campo fechaHora
+        const fecha = fechaHora.split('T')[0]; // Obtiene solo la fecha
+        const hora = fechaHora.split('T')[1].split('.')[0]; // Obtiene solo la hora
+
+        // Crear la cita con la fecha y la hora dividida
+        const result = await SolicitarCita.create({
+            fecha,
+            hora,
+            motivo,
+            Paciente_idPaciente: pacienteId
+        });
+
+        return res.status(201).json(result);
+    } catch (error) {
+        console.error('Error al crear la cita:', error);
+        return res.status(500).json({ message: 'Error al crear la cita' });
+    }
 };
+
+ 
 
 const update = async (req, res) => {
     const result = await SolicitarCitaService.update(req.params.id, req.body);

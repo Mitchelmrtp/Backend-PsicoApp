@@ -1,12 +1,13 @@
+// CuestionarioRoutes.js
 import express from 'express';
-import CuestionarioController from '../controllers/cuestionarioController.js';
+import { getAllCuestionarios, crearRespuesta } from '../controllers/CuestionarioController.js';
 
 const router = express.Router();
 
-router.get('/', CuestionarioController.findAll);
-router.get('/:id', CuestionarioController.findOne);
-router.post('/', CuestionarioController.create);
-router.put('/:id', CuestionarioController.update);
-router.delete('/:id', CuestionarioController.remove);
+// Obtener todos los cuestionarios
+router.get('/', getAllCuestionarios);
+
+// Crear una respuesta
+router.post('/respuestas', crearRespuesta);
 
 export default router;

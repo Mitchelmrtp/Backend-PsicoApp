@@ -1,29 +1,32 @@
-import CuestionarioService from '../services/cuestionarioService.js';
+// CuestionarioController.js
+import cuestionarioService from '../services/CuestionarioService.js';
+import respuestasCuestionarioService from '../services/RespuestaService.js';
 
-const findAll = async (req, res) => {
-    const result = await CuestionarioService.findAll();
-    return res.status(200).json(result);
+export const getAllCuestionarios = async (req, res) => {
+    try {
+        console.log('Obteniendo cuestionarios...');
+        const cuestionarios = await cuestionarioService.getAllCuestionarios();
+        
+        // Mapea los datos para devolver solo `dataValues`
+        const cuestionariosSimplificados = cuestionarios.map(cuestionario => cuestionario.dataValues);
+        
+        console.log('Cuestionarios obtenidos:', cuestionariosSimplificados);
+        res.json(cuestionariosSimplificados); // Devuelve la lista de cuestionarios simplificada
+    } catch (error) {
+        console.error('Error al obtener cuestionarios:', error);
+        res.status(500).json({ error: 'Error al obtener cuestionarios' });
+    }
 };
 
-const findOne = async (req, res) => {
-    const { id } = req.params;
-    const result = await CuestionarioService.findOne(id);
-    return result ? res.status(200).json(result) : res.status(404).json({ message: 'Cuestionario no encontrado' });
+export const crearRespuesta = async (req, res) => {
+    try {
+        const { idCuestionario, idPaciente, respuesta } = req.body;
+        const nuevaRespuesta = await respuestasCuestionarioService.crearRespuesta(idCuestionario, idPaciente, respuesta);
+        res.status(201).json(nuevaRespuesta);
+    } catch (error) {
+        console.error('Error al crear la respuesta:', error);
+        res.status(500).json({ error: 'Error al crear la respuesta' });
+    }
 };
 
-const create = async (req, res) => {
-    const result = await CuestionarioService.create(req.body);
-    return res.status(201).json(result);
-};
-
-const update = async (req, res) => {
-    const result = await CuestionarioService.update(req.params.id, req.body);
-    return res.status(200).json(result);
-};
-
-const remove = async (req, res) => {
-    const result = await CuestionarioService.remove(req.params.id);
-    return res.status(200).json({ message: 'Cuestionario eliminado correctamente' });
-};
-
-export default { findAll, findOne, create, update, remove };
+export default {getAllCuestionarios, crearRespuesta};

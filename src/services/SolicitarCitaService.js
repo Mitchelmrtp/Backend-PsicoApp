@@ -1,4 +1,4 @@
-import SolicitarCita from '../models/solicitarCita.js';
+import SolicitarCita from '../models/SolicitarCita.js';
 
 const findAll = async () => {
   return await SolicitarCita.findAll();

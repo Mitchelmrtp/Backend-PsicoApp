@@ -21,7 +21,8 @@ const Paciente = sequelize.define('Paciente', {
     onDelete: 'CASCADE',
   }
 }, {
-  timestamps: false
+  timestamps: false,
+  tableName: 'Paciente' 
 });
 
 export default Paciente;

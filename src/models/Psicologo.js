@@ -21,8 +21,8 @@ const Psicologo = sequelize.define('Psicologo', {
     onDelete: 'CASCADE',
   }
 }, {
-  freezeTableName: true,  // Evita que Sequelize pluralice el nombre de la tabla
   timestamps: false,
+  tableName: 'Psicologo'
 });
 
 export default Psicologo;

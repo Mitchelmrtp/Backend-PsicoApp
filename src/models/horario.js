@@ -19,7 +19,7 @@ const Horario = sequelize.define('Horario', {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  PsicologoGeneral_id_psicologogeneral: {
+  id_psicologo: {
     type: DataTypes.INTEGER,
     allowNull: false,
   }
