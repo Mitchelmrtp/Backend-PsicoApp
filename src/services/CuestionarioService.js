@@ -1,4 +1,3 @@
-// CuestionarioService.js
 import Cuestionario from '../models/cuestionario.js';
 
 const getAllCuestionarios = async () => {
@@ -7,7 +6,7 @@ const getAllCuestionarios = async () => {
       return cuestionarios; // Devuelve los datos obtenidos
   } catch (error) {
       console.error('Error al obtener los cuestionarios:', error);
-      throw error; // Lanza el error al controlador
+      throw error; 
   }
 };
 

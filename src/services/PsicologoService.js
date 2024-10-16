@@ -1,7 +1,6 @@
 import Psicologo from '../models/Psicologo.js';
 
 const PsicologoService = {
-  // Obtener todos los psicólogos generales
   findAll: async () => {
     try {
       return await Psicologo.findAll();
@@ -11,7 +10,6 @@ const PsicologoService = {
     }
   },
 
-  // Obtener un psicólogo por su ID
   findOne: async (id) => {
     try {
       return await Psicologo.findByPk(id);
@@ -21,7 +19,6 @@ const PsicologoService = {
     }
   },
 
-  // Crear un nuevo psicólogo
   create: async (data) => {
     try {
       return await Psicologo.create(data);
@@ -31,7 +28,6 @@ const PsicologoService = {
     }
   },
 
-  // Actualizar un psicólogo existente
   update: async (id, data) => {
     try {
       const psicologo = await Psicologo.findByPk(id);
@@ -46,7 +42,6 @@ const PsicologoService = {
     }
   },
 
-  // Eliminar un psicólogo
   remove: async (id) => {
     try {
       return await Psicologo.destroy({ where: { id_psicologo: id } });

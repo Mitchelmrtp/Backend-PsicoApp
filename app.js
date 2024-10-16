@@ -18,7 +18,6 @@ import SesionRoutes from './src/routes/SesionRoutes.js';
 
 
 
-// Crear instancia de la aplicación
 const app = express();
 
 // Middlewares
@@ -32,10 +31,10 @@ app.get('/', (req, res) => {
 
 // Configurar rutas
 app.use("/usuarios", UsuarioRoutes);
-app.use("/citas", SolicitarCitaRoutes);  // Verifica que el nombre de la ruta coincida con el archivo de ruta
+app.use("/citas", SolicitarCitaRoutes);  
 app.use("/pacientes", PacienteRoutes);
 app.use("/cuestionarios", CuestionarioRoutes);
-app.use('/respuestas', RespuestaRoutes);  // Utiliza las rutas de respuestas
+app.use('/respuestas', RespuestaRoutes);  
 
 app.use("/Psicologos", PsicologoRoutes);
 app.use("/historiales", HistorialRoutes);
@@ -46,5 +45,4 @@ app.use("/sesiones", SesionRoutes);
 
 
 
-// Exportar la app para usar en el servidor
 export default app;

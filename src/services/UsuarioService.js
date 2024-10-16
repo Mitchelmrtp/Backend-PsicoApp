@@ -12,12 +12,10 @@ const create = async (data) => {
   try {
     const newUsuario = await Usuario.create(data);
 
-    // Si el rol es "Paciente", creamos un registro en Paciente
     if (data.rol === 'Paciente') {
       await Paciente.create({ Usuario_id_usuario: newUsuario.id_usuario });
     }
 
-    // Si el rol es "Psicologo", creamos un registro en PsicologoGeneral
     if (data.rol === 'Psicologo') {
       await Psicologo.create({ Usuario_id_usuario: newUsuario.id_usuario });
     }

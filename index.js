@@ -14,28 +14,24 @@ async function main() {
         const server = createServer(app);
         const io = new Server(server, {
             cors: {
-                origin: "*", // Configura los orígenes permitidos
+                origin: "*", 
                 methods: ["GET", "POST"]
             }
         });
 
-        // Manejar la conexión de los sockets
         io.on("connection", (socket) => {
             console.log("Usuario conectado:", socket.id);
 
-            // Recibir el evento para unirse a una sala de chat
             socket.on('join_room', ({ roomId, userId }) => {
                 socket.join(roomId);
                 console.log(`Usuario ${userId} se unió a la sala ${roomId}`);
             });
 
-            // Manejar la recepción de mensajes
             socket.on("send_message", ({ roomId, message, senderId }) => {
                 console.log(`Mensaje de ${senderId} en sala ${roomId}: ${message}`);
                 io.to(roomId).emit("receive_message", { message, senderId });
             });
 
-            // Desconectar al usuario
             socket.on("disconnect", () => {
                 console.log("Usuario desconectado:", socket.id);
             });

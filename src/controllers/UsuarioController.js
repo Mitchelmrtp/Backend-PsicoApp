@@ -1,7 +1,6 @@
 import UsuarioService from '../services/usuarioService.js';
 import { Usuario, Paciente, Psicologo } from '../models/index.js';
-import sequelize from '../config/database.js';  // Importamos sequelize para transacciones
-import usuarioService from '../services/usuarioService.js';
+import sequelize from '../config/database.js';  
 
 const findAll = async (req, res) => {
   try {
@@ -35,7 +34,6 @@ const create = async (req, res) => {
   const transaction = await sequelize.transaction();
 
   try {
-    // Insertar en Usuario
     const newUsuario = await Usuario.create({
       nombre,
       apellido,
@@ -49,8 +47,8 @@ const create = async (req, res) => {
 
 
     const newPaciente = await Paciente.create({
-      historial: historial || '', // Puedes manejar el historial como opcional o vacío
-      Usuario_id_usuario: newUsuario.id_usuario, // Relacionar con el usuario recién creado
+      historial: historial || '', 
+      Usuario_id_usuario: newUsuario.id_usuario, 
     }, { transaction });
 
     if (rol === 'Psicologo') {        console.log("Verificando especialidad:", especialidad);
@@ -59,21 +57,18 @@ const create = async (req, res) => {
         throw new Error("La especialidad es requerida para psicólogos");
       }
 
-      // Insertar en Psicologo si el rol es Psicologo
       const newPsicologo = await Psicologo.create({
         especialidad: especialidad,
-        Usuario_id_usuario: newUsuario.id_usuario,  // Relacionar con el usuario recién creado
+        Usuario_id_usuario: newUsuario.id_usuario,  
       }, { transaction });
 
       console.log("Psicologo creado con ID:", newPsicologo.id_Psicologo);
     }
 
-    // Confirmar la transacción
     await transaction.commit();
     return res.status(201).json(newUsuario);
 
   } catch (error) {
-    // Revertir la transacción si ocurre un error
     await transaction.rollback();
     console.error("Error al crear el usuario, psicólogo o especialista:", error);
     return res.status(500).json({ message: 'Error al crear el usuario', error: error.message });
@@ -83,17 +78,14 @@ const create = async (req, res) => {
 
 
 const getContrasenaByEmailAndDNI = async (req, res) => {
-  const { correo, dni } = req.body;  // Asumimos que correo y dni vienen en el cuerpo de la solicitud
+  const { correo, dni } = req.body;  
 
   try {
-    // Buscar el usuario por correo y DNI
     const usuario = await Usuario.findOne({ where: { correo, DNI: dni } });
 
     if (usuario) {
-      // Retornar la contraseña
       return res.status(200).json({ contrasena: usuario.contrasena });
     } else {
-      // Si no se encuentra el usuario, retornamos un 404
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
   } catch (error) {
@@ -107,23 +99,19 @@ const updatePassword = async (req, res) => {
   const { contrasenaActual, nuevaContrasena } = req.body;
 
   try {
-    // Buscar al usuario por su ID
     const usuario = await Usuario.findByPk(id);
 
     if (!usuario) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
-    // Verificar que la contraseña actual coincida
     if (usuario.contrasena !== contrasenaActual) {
       return res.status(400).json({ message: 'Contraseña actual incorrecta' });
     }
 
-    // Actualizar la contraseña con la nueva
     usuario.contrasena = nuevaContrasena;
     await usuario.save();
 
-    // Verificar si el cambio se realizó correctamente
     const usuarioActualizado = await Usuario.findByPk(id);
     console.log(`Nueva contraseña almacenada: ${usuarioActualizado.contrasena}`);
 

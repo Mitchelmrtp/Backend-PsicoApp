@@ -34,7 +34,6 @@ const sendResponse = (result, res) => {
         return res.status(500).json({ message: 'Ha ocurrido un error' });
 };
 
-// Controlador en Node.js para obtener el Paciente por id_usuario
 async function getPacienteByUsuarioId(req, res) {
     try {
       const usuarioId = req.params.usuarioId;

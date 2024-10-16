@@ -16,11 +16,9 @@ const create = async (req, res) => {
     try {
         const { fechaHora, motivo, pacienteId } = req.body;
 
-        // Extraer la fecha y la hora desde el campo fechaHora
-        const fecha = fechaHora.split('T')[0]; // Obtiene solo la fecha
-        const hora = fechaHora.split('T')[1].split('.')[0]; // Obtiene solo la hora
+        const fecha = fechaHora.split('T')[0]; 
+        const hora = fechaHora.split('T')[1].split('.')[0]; 
 
-        // Crear la cita con la fecha y la hora dividida
         const result = await SolicitarCita.create({
             fecha,
             hora,
