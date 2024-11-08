@@ -15,7 +15,7 @@ import HorarioRoutes from './src/routes/horarioRoutes.js';
 import ReporteRoutes from './src/routes/reporteRoutes.js';
 import RevisionDiagnosticaRoutes from './src/routes/revisionDiagnosticaRoutes.js';
 import SesionRoutes from './src/routes/SesionRoutes.js';
-
+import RutinaRoutes from './src/routes/rutinaRoutes.js';
 
 
 const app = express();
@@ -35,7 +35,7 @@ app.use("/citas", SolicitarCitaRoutes);
 app.use("/pacientes", PacienteRoutes);
 app.use("/cuestionarios", CuestionarioRoutes);
 app.use('/respuestas', RespuestaRoutes);  
-
+app.use('/rutinas', RutinaRoutes);
 app.use("/Psicologos", PsicologoRoutes);
 app.use("/historiales", HistorialRoutes);
 app.use("/horarios", HorarioRoutes);
