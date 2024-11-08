@@ -14,7 +14,7 @@ import Reporte from './reporte.js';
 import RevisionDiagnostica from './revisionDiagnostica.js';
 import Sesion from './sesion.js';
 import SolicitarCita from './SolicitarCita.js';
-
+import Rutina from './Rutina.js';
 // Definir relaciones entre los modelos
 
 // Usuario - Paciente
@@ -60,6 +60,10 @@ Reporte.belongsTo(Sesion, { foreignKey: 'Sesion_id_sesion' });
 Usuario.hasOne(Psicologo, { foreignKey: 'Usuario_id_usuario' });
 Psicologo.belongsTo(Usuario, { foreignKey: 'Usuario_id_usuario' });
 
+// Paciente - Rutina
+Paciente.hasMany(Rutina, { foreignKey: 'Paciente_idPaciente' });
+Rutina.belongsTo(Paciente, { foreignKey: 'Paciente_idPaciente' });
+
 // Exportar todos los modelos
 export {
   Usuario,
@@ -72,5 +76,6 @@ export {
   Reporte,
   RevisionDiagnostica,
   Sesion,
-  SolicitarCita
+  SolicitarCita,
+  Rutina
 };
