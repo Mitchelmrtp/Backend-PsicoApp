@@ -11,11 +11,23 @@ const Reporte = sequelize.define('Reporte', {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  descripcion: {
-    type: DataTypes.STRING(30),
+  Estado_emocional: {
+    type: DataTypes.TEXT,
     allowNull: true,
   },
-  fecha: {
+  Temas_tratados: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  Dificultades: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  Comentarios: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  Fecha: {
     type: DataTypes.DATE,
     allowNull: true,
   }
